@@ -1531,99 +1531,100 @@ We had water damage in our kitchen and they handled everything from start to fin
         </p>
 
         <div class="contact-grid">
-          <div class="contact-card">
-            <!-- Netlify form -->
-             <div id="form-success" class="contact-success" style="display:none;">
-  <strong>Thank you!</strong> We’ve received your project details and will follow up
-  within one business day.
+<div class="contact-card">
+  <!-- Success message (shows after redirect) -->
+  <div id="form-success" class="contact-success" style="display:none;">
+    <strong>Thank you!</strong> We’ve received your project details and will follow up
+    within one business day.
+  </div>
+
+  <!-- Netlify form -->
+  <form
+    id="contact-form"
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    action="/?form=success"
+  >
+    <!-- REQUIRED so Netlify detects this form -->
+    <input type="hidden" name="form-name" value="contact" />
+
+    <!-- Honeypot field -->
+    <p style="display:none;">
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
+
+    <div class="form-row form-row--two">
+      <div>
+        <label for="name">Full name *</label>
+        <input id="name" name="Full Name" type="text" required>
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input id="email" name="Email" type="email" required>
+      </div>
+    </div>
+
+    <div class="form-row form-row--two">
+      <div>
+        <label for="phone">Phone number *</label>
+        <input id="phone" name="Phone Number" type="tel" required>
+      </div>
+      <div>
+        <label for="address">City / neighborhood</label>
+        <input id="address" name="Address" type="text" placeholder="Naperville, Aurora, Lisle...">
+      </div>
+    </div>
+
+    <div class="form-row form-row--two">
+      <div>
+        <label for="service">What type of project? *</label>
+        <select id="service" name="Service Type" required>
+          <option value="">Select one</option>
+          <option>Kitchen remodel</option>
+          <option>Bathroom remodel</option>
+          <option>Basement finishing / remodeling</option>
+          <option>Water / fire damage restoration</option>
+          <option>Whole home renovation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="timeline">When are you hoping to start?</label>
+        <select id="timeline" name="Timeline">
+          <option value="">Choose one</option>
+          <option>As soon as possible</option>
+          <option>In the next 1–3 months</option>
+          <option>In 3–6 months</option>
+          <option>Just planning / budgeting</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label for="details">Please describe your project *</label>
+        <textarea id="details" name="Project Details" required placeholder="Example: We’d like to update our kitchen with new cabinets, countertops and flooring."></textarea>
+      </div>
+    </div>
+
+    <div class="checkbox-row">
+      <input id="consent" name="Contact Consent" type="checkbox" required>
+      <label for="consent">
+        I agree to be contacted about my inquiry and understand this form will email my message to Remodel Right Restorations.
+      </label>
+    </div>
+
+    <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+      <button type="submit" class="btn">
+        Send my project details
+        <span>→</span>
+      </button>
+      <small>We never share your information. No spam.</small>
+    </div>
+  </form>
 </div>
-
-
-          <form
-                id="contact-form"
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="/?form=success">
-
-                <input type="hidden" name="form-name" value="contact" />
-
-                <p style="display:none;">
-                  <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                </p>
-
-              <div class="form-row form-row--two">
-                <div>
-                  <label for="name">Full name *</label>
-                  <input id="name" name="Full Name" type="text" required>
-                </div>
-                <div>
-                  <label for="email">Email *</label>
-                  <input id="email" name="Email" type="email" required>
-                </div>
-              </div>
-
-              <div class="form-row form-row--two">
-                <div>
-                  <label for="phone">Phone number *</label>
-                  <input id="phone" name="Phone Number" type="tel" required>
-                </div>
-                <div>
-                  <label for="address">City / neighborhood</label>
-                  <input id="address" name="Address" type="text" placeholder="Naperville, Aurora, Lisle...">
-                </div>
-              </div>
-
-              <div class="form-row form-row--two">
-                <div>
-                  <label for="service">What type of project? *</label>
-                  <select id="service" name="Service Type" required>
-                    <option value="">Select one</option>
-                    <option>Kitchen remodel</option>
-                    <option>Bathroom remodel</option>
-                    <option>Basement finishing / remodeling</option>
-                    <option>Water / fire damage restoration</option>
-                    <option>Whole home renovation</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="timeline">When are you hoping to start?</label>
-                  <select id="timeline" name="Timeline">
-                    <option value="">Choose one</option>
-                    <option>As soon as possible</option>
-                    <option>In the next 1–3 months</option>
-                    <option>In 3–6 months</option>
-                    <option>Just planning / budgeting</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div>
-                  <label for="details">Please describe your project *</label>
-                  <textarea id="details" name="Project Details" required placeholder="Example: We’d like to update our kitchen with new cabinets, countertops and flooring."></textarea>
-                </div>
-              </div>
-
-              <div class="checkbox-row">
-                <input id="consent" name="Contact Consent" type="checkbox" required>
-                <label for="consent">
-                  I agree to be contacted about my inquiry and understand this form will email my message to Remodel Right Restorations.
-                </label>
-              </div>
-
-              <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                <button type="submit" class="btn">
-                  Send my project details
-                  <span>→</span>
-                </button>
-                <small>We never share your information. No spam.</small>
-              </div>
-            </form>
-          </div>
-
           <div class="contact-details">
             <p>
               Prefer to talk or text first? Reach out directly and we’ll be happy to answer questions, discuss budget and timing, and share more photos of our work.
